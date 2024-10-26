@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+@layer components {
+    .main {
+        @apply flex justify-between
+    }
+
+    .content {
+        @apply flex-1
+    }
+
+    .header {
+        @apply flex justify-between
+    }
+
+    .header-close {
+        @apply flex flex-col items-center gap-5 text-xl font-bold
+    }
+
+    .header>h1 {
+        @apply text-xl font-bold
+    }
+
+    .sidebar {
+        @apply px-8 py-8 w-72 transition-all duration-200 ease-in-out;
+    }
+
+    .sidebar-closed {
+        @apply px-8 py-8 w-28 transition-all duration-200 ease-in-out;
+
+    }
+
+    .logo {
+        @apply text-logo text-2xl
+    }
+
+    .tabs {
+        @apply flex flex-col gap-6 py-20
+    }
+
+    ul {
+        @apply text-tabs
+    }
+
+    .link {
+        @apply flex gap-4 transition duration-200
+    }
+
+    .link span {
+        @apply text-sm
+    }
+
+    .link:hover {
+        @apply text-logo
+    }
+
+    .side-close {
+        @apply justify-end
+    }
+
+    .link-active {
+        @apply flex gap-4 transition duration-200 text-logo;
+
+        span {
+            @apply text-sm;
+        }
+    }
+
+    .line {
+        @apply border-2
+    }
+
+    .section-2 {
+        @apply py-10
+    }
+
+    .section-2 .link {
+        @apply pb-6
+    }
+
+    .section-2 h3 {
+        @apply pb-6 text-sm relative -left-2
+    }
+
+    .section-2 .link:nth-last-of-type() {
+        @apply transition duration-200
+    }
+
+    .section-2 .link:nth-child(4):hover {
+        @apply text-red-600
+    }
+
+
+    /* TOPBAR */
+
+    .topbar {
+        @apply flex justify-between py-6 px-6;
+    }
+
+    .topbar .section-1 {
+        @apply flex gap-6
+    }
+
+    .topbar .section-1 h2 {
+        @apply font-bold
+    }
+
+    .topbar .section-1 .channel {
+        @apply text-tabs flex items-center gap-1
+    }
+
+    .section-1-2 {
+        @apply flex gap-6 items-center
+    }
+
+    .section-1-2 .img {
+        @apply w-10 h-10
+    }
+
+    .section-1-2 button {
+        @apply bg-gray-100 rounded-md py-2 px-3 text-tabs
+    }
+
+    .section-1-2 .search {
+        @apply relative
+    }
+
+    .section-1-2 .search input {
+        @apply py-2 pl-4 pr-14 rounded-lg border-2 outline-none
+    }
+
+
+    /* HOME */
+
+    .home {
+        @apply py-10 px-9
+    }
+
+    .home .home-1 {
+        @apply flex justify-between
+    }
+
+    .home-1 div:nth-child(1) h1 {
+        @apply text-4xl font-medium
+    }
+
+    .home-1 div:nth-child(1) p {
+        @apply text-tabs
+    }
+
+    .home-1 div:nth-child(2)>p:nth-of-type(1) {
+        @apply text-center font-medium
+    }
+
+    .home-1 div:nth-child(2)>p:nth-of-type(1) span {
+        @apply text-tabs
+    }
+
+    .home-1 div:nth-child(2)>p:nth-of-type(2) {
+        @apply text-tabs
+    }
+
+    .home-3 {
+        @apply flex gap-6
+    }
+
+    .home-3>div {
+        @apply pt-12
+    }
+
+    .home-3 .heading {
+        @apply flex justify-between pb-4
+    }
+
+    .home-3 div>div h1 {
+        @apply flex gap-2
+    }
+
+    .home-3 div>div h1 {
+        @apply text-tabs text-xl
+    }
+
+    .home-3 div>div h1>span {
+        @apply py-0.5 px-3 bg-gray-100 text-tabs
+    }
+
+
+    /* CARD */
+
+    .card {
+        @apply border-2 rounded-lg p-4 mb-4
+    }
+
+    .card .heading {
+        @apply flex justify-between items-center pb-4
+    }
+
+    .card .heading div:nth-child(1) {
+        @apply flex gap-4 items-center
+    }
+
+    .card .heading .tag {
+        @apply flex gap-4 items-center py-0.5 px-4 rounded-sm
+    }
+
+    .card .heading .tagblue {
+        @apply bg-blue-200 text-blue-900 font-medium
+    }
+
+    .card .heading .tagred {
+        @apply bg-red-200 text-red-900
+    }
+
+    .card .heading .tagyellow {
+        @apply bg-yellow-200 text-yellow-900
+    }
+
+
+    .card .heading .no-tag {
+        @apply p-2 rounded-sm bg-gray-100 text-tabs font-medium
+    }
+
+    .card .heading span {
+        @apply py-1 px-4 bg-gray-100 text-tabs
+    }
+
+    .card .content h3 {
+        @apply font-medium
+    }
+
+    .card .content p {
+        @apply text-tabs pb-5
+    }
+
+    .card .content img {
+        @apply rounded-lg w-72 h-72 object-cover text-center
+    }
+
+    .card .footer {
+        @apply flex justify-between pt-5
+    }
+
+    .card .footer div:nth-child(1) {
+        @apply flex gap-1
+    }
+
+    .card .footer div:nth-child(1) img {
+        @apply rounded-full w-10 h-10
+    }
+
+    .card .footer div:nth-child(2) {
+        @apply flex gap-4 items-center
+    }
+
+    .card .footer div:nth-child(2) span {
+        @apply bg-gray-100 py-1 px-2 text-tabs
+    }
+
+
+    .home-2 {
+        @apply flex items-center gap-2
+    }
+
+    .home .section-1 {
+        @apply flex gap-2
+    }
+
+    .home-2 .section-2 {
+        @apply flex gap-6
+    }
+
+    .home-2 .section-2 div:nth-child(2) {
+        @apply flex 
+    }
+
+    .persons {
+        @apply relative -ml-3 w-10 h-10 rounded-full
+    }
+
+    .invite {
+        @apply flex items-center gap-2 text-blue-500 ml-4
+    }
+
+
+
+}
