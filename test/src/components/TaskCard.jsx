@@ -16,6 +16,7 @@ const TaskCard = ({
   persons,
   attachments,
   commetns,
+  width,
 }) => {
   return (
     <>
@@ -31,24 +32,34 @@ const TaskCard = ({
 
               <FontAwesomeIcon
                 icon={faPlus}
-                className="text-tabs bg-gray-100 py-2 px-4  "
+                className="text-tabs bg-gray-100 py-2 px-4 cursor-pointer  "
               />
             </div>
           ) : (
             <div className="no-tag">
-              <FontAwesomeIcon icon={faPlus} />
+              <FontAwesomeIcon icon={faPlus}  />
               Add Tag
             </div>
           )}
 
           <span>
-            <FontAwesomeIcon icon={faEllipsis} />
+            <FontAwesomeIcon icon={faEllipsis}  className="cursor-pointer"/>
           </span>
         </div>
 
         <div className="content">
           <h3>{title}</h3>
           <p>{description}</p>
+          {progress ? (
+            <div className="prog">
+              <div className="progress-container">
+                <div className="progress-bar" style={{ width: `${width}%` }} />
+              </div>
+              <span className="persentage">{width}%</span>
+            </div>
+          ) : (
+            ""
+          )}
           {image ? <img src={image} alt="" /> : ""}
         </div>
 
@@ -64,14 +75,14 @@ const TaskCard = ({
           <div>
             {attachments ? (
               <span>
-                <FontAwesomeIcon icon={faLink} /> {attachments}
+                <FontAwesomeIcon icon={faLink} className="cursor-pointer" /> {attachments}
               </span>
             ) : (
               ""
             )}
             {commetns ? (
               <span>
-                <FontAwesomeIcon icon={faCommentDots} /> {commetns}
+                <FontAwesomeIcon icon={faCommentDots} className="cursor-pointer" /> {commetns}
               </span>
             ) : (
               ""

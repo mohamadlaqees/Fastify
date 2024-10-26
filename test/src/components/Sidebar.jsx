@@ -13,10 +13,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useContext } from "react";
+import { SidebarContext } from "../store/SidebarContext";
 
 const Sidebar = () => {
-  const [openSidebar, setOpenSidbar] = useState(true);
+  const { openSidebar, setOpenSidbar } = useContext(SidebarContext);
   const sidebarHandler = () => {
     setOpenSidbar(!openSidebar);
   };

@@ -13,8 +13,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import { Select } from "@mui/material";
 import FilterList from "@mui/icons-material/FilterList";
+import { useContext } from "react";
+import { SidebarContext } from "../store/SidebarContext";
 
 const Home = () => {
+  const { openSidebar } = useContext(SidebarContext);
   const persons = [
     {
       alt: "person1",
@@ -104,43 +107,43 @@ const Home = () => {
               </Select>
             </FormControl>
           </Box>
-        </div>
-        <div className="section-2">
-          <div className="line" />
+          <div className="section-2">
+            <div className="line" />
 
-          <div>
-            {persons.map((person) => (
-              <img
-                key={person.alt}
-                className="persons"
-                src={person.src}
-                alt={person.alt}
-              />
-            ))}
+            <div>
+              {persons.map((person) => (
+                <img
+                  key={person.alt}
+                  className="persons"
+                  src={person.src}
+                  alt={person.alt}
+                />
+              ))}
 
-            <div className="invite">
-              invite{" "}
-              <FontAwesomeIcon
-                icon={faPlus}
-                className="rounded-full bg-blue-200 text-blue-500 p-1 cursor-pointer"
-              />
-              <FontAwesomeIcon
-                icon={faPaperclip}
-                className="text-tabs cursor-pointer"
-              />
+              <div className="invite">
+                invite{" "}
+                <FontAwesomeIcon
+                  icon={faPlus}
+                  className="rounded-full bg-blue-200 text-blue-500 p-1 cursor-pointer"
+                />
+                <FontAwesomeIcon
+                  icon={faPaperclip}
+                  className="text-tabs cursor-pointer"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="home-3">
+      <div className={`${openSidebar ? "home-3" : "home-3 home-3-close"}`}>
         <div>
           <div className="heading">
             <h1>
               Planned <span>1</span>
             </h1>
             <span>
-              <FontAwesomeIcon icon={faEllipsis} className="text-tabs" />
+              <FontAwesomeIcon icon={faEllipsis} className="text-tabs cursor-pointer" />
             </span>
           </div>
           <TaskCard
@@ -165,7 +168,7 @@ const Home = () => {
               In progress <span>2</span>
             </h1>
             <span>
-              <FontAwesomeIcon icon={faEllipsis} className="text-tabs" />
+              <FontAwesomeIcon icon={faEllipsis} className="text-tabs cursor-pointer" />
             </span>
           </div>
           <TaskCard
@@ -179,6 +182,8 @@ const Home = () => {
                 src: "/test.png",
               },
             ]}
+            progress={true}
+            width={70}
           />
 
           <TaskCard
@@ -193,7 +198,7 @@ const Home = () => {
               Done <span>1</span>
             </h1>
             <span>
-              <FontAwesomeIcon icon={faEllipsis} className="text-tabs" />
+              <FontAwesomeIcon icon={faEllipsis} className="text-tabs cursor-pointer" />
             </span>
           </div>
           <TaskCard

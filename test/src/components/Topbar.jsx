@@ -19,7 +19,7 @@ const Topbar = () => {
           <div>
             <h2>
               Redesign Website V2{" "}
-              <FontAwesomeIcon icon={faStar} className="text-yellow-400" />
+              <FontAwesomeIcon icon={faStar} className="text-yellow-400 cursor-pointer" />
             </h2>
             <div className="channel">
               <FontAwesomeIcon
